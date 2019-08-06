@@ -1,7 +1,7 @@
 # React-Quote-Generator
 
 This is a react app that makes displays random quotes.
-
+The link can be found here 
 
 
 # Files
@@ -143,5 +143,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTA2MjIyOV19
+eyJoaXN0b3J5IjpbLTEzOTEyMDMxMDFdfQ==
 -->
