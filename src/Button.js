@@ -3,7 +3,7 @@ import React from "react";
 export function Button(props) {
   return (
     <div className="card-action btn-container">
-      <button className=".right-align btn-small hoverable">Prev</button>
+      <button className=".right-align btn-small hoverable " onClick={props.prev}>Prev</button>
 
       <div className="right">
         <button className="btn-small hoverable" onClick={props.request}>

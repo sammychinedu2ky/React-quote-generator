@@ -9,10 +9,13 @@ export class Card extends React.Component {
     this.state = {
       content: "Quotes from wise men",
       title: "Sammychinedu2ky",
-      show: "no"
+      show: "no",
+      count: 0
     };
+    this.store=[];
     this.makeRequest = this.makeRequest.bind(this);
     this.changeState = this.changeState.bind(this);
+    this.prev = this.prev.bind(this);
   }
  
    changeState(content, title) {
@@ -22,6 +25,22 @@ export class Card extends React.Component {
       title: title,
       show: state.show === "no" ? "yes" : "no"
     }));
+  }
+  prev(){
+    setTimeout(()=>{
+      if(this.state.count<=this.store.length-1 && this.store.length!==0){
+        this.setState((state)=>({show:'yes'}))
+      }
+    },0)
+    setTimeout(() => {
+      this.setState((state)=>({show:'no'}))
+    }, 2000);
+    setTimeout(()=>{
+    this.setState((state)=>{
+      if(state.count<=this.store.length-1 && this.store.length!==0){
+        return {content:this.store[state.count][0],title:this.store[state.count][1],count:++state.count}
+      }
+    })},2000)
   }
   makeRequest() {
     
@@ -33,9 +52,11 @@ export class Card extends React.Component {
         let answer = xhttp.response;
         console.log(answer[0]);
         let { content, title } = answer[0];
-       content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>/g,'');
+       content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>|<br \/>/g,'');
        content=content.replace(/;(?=\w)/g,"'")
         //console.log(this)
+      this.store=[[content,title],...this.store]
+        
       this.changeState(content, title);
       }
     };
@@ -55,7 +76,7 @@ export class Card extends React.Component {
             <div className="card blue-grey darken-1 rem hoverable" >
               <Quotes content={this.state.content} title={this.state.title} />
               <Loader show={this.state.show} />
-              <Button request={this.makeRequest} />
+              <Button request={this.makeRequest} prev={this.prev} />
             </div>
           </div>
         </div>
