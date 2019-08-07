@@ -31,7 +31,7 @@ export class Card extends React.Component {
     xhttp.onreadystatechange = ()=>{
       if (xhttp.readyState == 4) {
         let answer = xhttp.response;
-        console.log(answer[0]);
+        //console.log(answer[0]);
         let { content, title } = answer[0];
        content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>/g,'');
        content=content.replace(/;(?=\w)/g,"'")
