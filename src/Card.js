@@ -29,7 +29,7 @@ export class Card extends React.Component {
     this.setState((state, props) => ({ show: "yes" }));
     xhttp.responseType = "json";
     xhttp.onreadystatechange = ()=>{
-      if (this.xhttp.readyState == 4) {
+      if (xhttp.readyState == 4) {
         let answer = xhttp.response;
         console.log(answer[0]);
         let { content, title } = answer[0];
