@@ -52,7 +52,7 @@ export class Card extends React.Component {
         let answer = xhttp.response;
         //console.log(answer[0]);
         let { content, title } = answer[0];
-       content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>/g,'');
+       content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>|<br \/>/g,'');
        content=content.replace(/;(?=\w)/g,"'")
         //console.log(this)
       this.store=[[content,title],...this.store]
