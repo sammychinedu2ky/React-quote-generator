@@ -10,7 +10,7 @@ export class Card extends React.Component {
       content: "Quotes from wise men",
       title: "Sammychinedu2ky",
       show: "no",
-      count: 0
+      count: 1
     };
     this.store=[];
     this.makeRequest = this.makeRequest.bind(this);
