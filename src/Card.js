@@ -45,7 +45,6 @@ export class Card extends React.Component {
   makeRequest() {
     
     let xhttp = new XMLHttpRequest();
-    
     xhttp.responseType = "json";
     xhttp.onreadystatechange = ()=>{
       this.setState((state, props) => ({ show: "yes" }));
