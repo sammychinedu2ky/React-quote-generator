@@ -45,12 +45,14 @@ export class Card extends React.Component {
   makeRequest() {
     
     let xhttp = new XMLHttpRequest();
-    this.setState((state, props) => ({ show: "yes" }));
+    
     xhttp.responseType = "json";
     xhttp.onreadystatechange = ()=>{
+      this.setState((state, props) => ({ show: "yes" }));
       if (xhttp.status === 200) {
         let answer = xhttp.response;
         console.log(answer[0]);
+        
         let { content, title } = answer[0];
        content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>|<br \/>/g,'');
        content=content.replace(/;(?=\w)/g,"'")
