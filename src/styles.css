@@ -1,22 +1,22 @@
-.container  {
+.container {
   display: flex;
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
 }
-.size{
+.size {
   min-width: 350px;
 }
 .container .row {
   margin: 0 auto;
 }
-.rem{
+.rem {
   border-radius: 12px !important;
 }
-.btn-container{
-	background-color: transparent  !important;
+.btn-container {
+  background-color: transparent !important;
   border-top: none !important;
-  border-radius:12px !important;
+  border-radius: 12px !important;
 }

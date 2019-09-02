@@ -51,10 +51,12 @@ export class Card extends React.Component {
       this.setState((state, props) => ({ show: "yes" }));
       if (xhttp.readyState === 4 && xhttp.status===200) {
         let answer = xhttp.response;
-        //console.log(answer[0]);
-        let { content, title } = answer[0];
+        answer = (answer[Math.floor(Math.random() * (10 - 0) + 0)]);
+        let  title = answer.title.rendered;
+        let  content= answer.content.rendered;
        content=content.replace(/<\w+>|<\/\w+>|&#8217;|&#8211;|<br\/>|<br \/>/g,'');
        content=content.replace(/;(?=\w)/g,"'")
+       console.log(title)
         //console.log(this)
       this.store=[[content,title],...this.store]
         
@@ -63,10 +65,15 @@ export class Card extends React.Component {
     };
     xhttp.open(
       "GET",
-      "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?" +
-        new Date().getTime(),
-      true
+      "https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand" ,
+       true
     );
+    // xhttp.open(
+    //   "GET",
+    //   "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?" +
+    //     new Date().getTime(),
+    //   true
+    // );
     xhttp.send();
   }
   render() {
