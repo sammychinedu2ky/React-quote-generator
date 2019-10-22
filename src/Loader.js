@@ -3,7 +3,7 @@ export function Loader(props){
   if(props.show==='yes'){
     return (
       <div className="progress ">
-      <div className="indeterminate  "></div>
+      <div className="indeterminate"></div>
   </div>
     )}
     else return (
