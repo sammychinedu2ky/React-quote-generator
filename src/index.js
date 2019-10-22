@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//import M from "materialize-css";
-
 import { Card } from "./Card.js";
 import "./styles.css";
 import "materialize-css/dist/css/materialize.min.css";

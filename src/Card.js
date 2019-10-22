@@ -1,8 +1,8 @@
 import React from "react";
-import { Button } from "./Button.js";
+import { ButtonContainer } from "./Button.js";
 import { Loader } from "./Loader.js";
 import { Quotes } from "./Quotes.js";
-//import "./styles.css";
+
 export class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -68,12 +68,6 @@ export class Card extends React.Component {
       "https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand" ,
        true
     );
-    // xhttp.open(
-    //   "GET",
-    //   "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?" +
-    //     new Date().getTime(),
-    //   true
-    // );
     xhttp.send();
   }
   render() {
@@ -84,7 +78,7 @@ export class Card extends React.Component {
             <div className="card blue-grey darken-1 rem hoverable" >
               <Quotes content={this.state.content} title={this.state.title} />
               <Loader show={this.state.show} />
-              <Button request={this.makeRequest} prev={this.prev} />
+              <ButtonContainer request={this.makeRequest} prev={this.prev} />
             </div>
           </div>
         </div>
